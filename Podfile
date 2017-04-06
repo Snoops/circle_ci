@@ -6,5 +6,7 @@ target 'circleci' do
   use_frameworks!
 
   # Pods for circleci
+  pod 'Fabric'
+  pod 'Crashlytics'
 
 end

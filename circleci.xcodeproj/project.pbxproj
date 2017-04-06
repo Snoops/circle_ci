@@ -101,6 +101,7 @@
 				7A16F86D1E96F8D900C6B69F /* Resources */,
 				28E60B35330B17C32A3B0C11 /* [CP] Embed Pods Frameworks */,
 				76D46B0E9DC892CD3C413BFB /* [CP] Copy Pods Resources */,
+				7A20C1411E96FAE00062EB4C /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -204,6 +205,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-circleci/Pods-circleci-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7A20C1411E96FAE00062EB4C /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" f083510bfa8fefe2571d830145eb808945803383 ff1bb2c3773f866b1dd8eac22c45f69c3f564122960d009c1e5881ab2e58cec4";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -381,6 +396,7 @@
 				7A16F8831E96F8D900C6B69F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
