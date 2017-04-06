@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F535EF22DC02CBF76C4BA01 /* Pods_circleci.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */; };
 		7A16F8731E96F8D900C6B69F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16F8721E96F8D900C6B69F /* AppDelegate.swift */; };
 		7A16F8751E96F8D900C6B69F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16F8741E96F8D900C6B69F /* ViewController.swift */; };
 		7A16F8781E96F8D900C6B69F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F8761E96F8D900C6B69F /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BE65EFB1F1CBC4B07E4B895 /* Pods-circleci.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-circleci.release.xcconfig"; path = "Pods/Target Support Files/Pods-circleci/Pods-circleci.release.xcconfig"; sourceTree = "<group>"; };
+		5593478FD38588F6BF02D174 /* Pods-circleci.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-circleci.debug.xcconfig"; path = "Pods/Target Support Files/Pods-circleci/Pods-circleci.debug.xcconfig"; sourceTree = "<group>"; };
 		7A16F86F1E96F8D900C6B69F /* circleci.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = circleci.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A16F8721E96F8D900C6B69F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A16F8741E96F8D900C6B69F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		7A16F8791E96F8D900C6B69F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A16F87C1E96F8D900C6B69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A16F87E1E96F8D900C6B69F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_circleci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F535EF22DC02CBF76C4BA01 /* Pods_circleci.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8D4BE154446F329B76DC45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BD86D614C740FF3CD536529 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5593478FD38588F6BF02D174 /* Pods-circleci.debug.xcconfig */,
+				3BE65EFB1F1CBC4B07E4B895 /* Pods-circleci.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7A16F8661E96F8D900C6B69F = {
 			isa = PBXGroup;
 			children = (
 				7A16F8711E96F8D900C6B69F /* circleci */,
 				7A16F8701E96F8D900C6B69F /* Products */,
+				5BD86D614C740FF3CD536529 /* Pods */,
+				0D8D4BE154446F329B76DC45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7A16F8811E96F8D900C6B69F /* Build configuration list for PBXNativeTarget "circleci" */;
 			buildPhases = (
+				7418E48E65413D09B7F5BD8A /* [CP] Check Pods Manifest.lock */,
 				7A16F86B1E96F8D900C6B69F /* Sources */,
 				7A16F86C1E96F8D900C6B69F /* Frameworks */,
 				7A16F86D1E96F8D900C6B69F /* Resources */,
+				28E60B35330B17C32A3B0C11 /* [CP] Embed Pods Frameworks */,
+				76D46B0E9DC892CD3C413BFB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		28E60B35330B17C32A3B0C11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-circleci/Pods-circleci-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7418E48E65413D09B7F5BD8A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		76D46B0E9DC892CD3C413BFB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-circleci/Pods-circleci-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7A16F86B1E96F8D900C6B69F /* Sources */ = {
@@ -261,6 +336,7 @@
 		};
 		7A16F8821E96F8D900C6B69F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5593478FD38588F6BF02D174 /* Pods-circleci.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y3RXWB7995;
@@ -274,6 +350,7 @@
 		};
 		7A16F8831E96F8D900C6B69F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE65EFB1F1CBC4B07E4B895 /* Pods-circleci.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Y3RXWB7995;
