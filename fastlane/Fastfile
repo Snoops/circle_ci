@@ -26,6 +26,8 @@ platform :ios do
   desc "Submit a new Beta Build to Apple Crashlytics"
   lane :beta do
 
+    cert
+
     gym(
       workspace: "circleci.xcworkspace",
       configuration: "Release",
@@ -35,7 +37,6 @@ platform :ios do
 
     crashlytics(
       crashlytics_path: "Pods/Crashlytics/iOS/Crashlytics.framework", # path to your Crashlytics.framework
-      notes: "Latest Beta build",
       groups: ["Testers"],
       notifications: true
     )
