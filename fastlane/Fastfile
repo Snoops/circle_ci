@@ -28,6 +28,8 @@ platform :ios do
 
     cert
 
+    sigh(force: true)
+
     gym(
       workspace: "circleci.xcworkspace",
       configuration: "Release",
