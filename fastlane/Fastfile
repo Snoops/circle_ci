@@ -26,8 +26,6 @@ platform :ios do
   desc "Submit a new Beta Build to Apple Crashlytics"
   lane :beta do
 
-    increment_build_number
-
     gym(
       workspace: "circleci.xcworkspace",
       configuration: "Release",
@@ -46,7 +44,7 @@ platform :ios do
     slack(
       message: "Successfully deployed new Crashlytics Beta update.",
     )
-    
+
   end
 
   desc "Deploy a new version to the App Store"

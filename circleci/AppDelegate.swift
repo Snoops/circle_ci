@@ -21,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Fabric.with([Crashlytics.self])
         
-        // TESt modif
-
         return true
     }
 
