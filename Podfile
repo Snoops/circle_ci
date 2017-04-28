@@ -9,4 +9,7 @@ target 'circleci' do
   pod 'Fabric'
   pod 'Crashlytics'
 
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+
 end

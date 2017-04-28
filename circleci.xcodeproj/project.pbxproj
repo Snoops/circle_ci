@@ -22,6 +22,7 @@
 		DD0B8A093D5680DFE86D669E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3DFE0FF6AA4EC4E8F1D69E /* CoreTelephony.framework */; };
 		DD608A93FDE81E3C956381CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619FDF4C055B9893ECB97474 /* QuartzCore.framework */; };
 		E505313CDCCCBE585B565638 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF130C303658C30165A4F489 /* CoreMedia.framework */; };
+		7A7B2CAC1EA6883B00C5EBE2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B2CAB1EA6883B00C5EBE2 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		B715A11A5190E1BF9D9C0DC1 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		C9F9735323620F5733F4AA8C /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		D45902D01585AB957CDDB748 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		7A7B2CAB1EA6883B00C5EBE2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_circleci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,10 +120,11 @@
 			children = (
 				7A16F8721E96F8D900C6B69F /* AppDelegate.swift */,
 				7A16F8741E96F8D900C6B69F /* ViewController.swift */,
+				7A7B2CAB1EA6883B00C5EBE2 /* User.swift */,
 				7A16F8761E96F8D900C6B69F /* Main.storyboard */,
-				7A16F8791E96F8D900C6B69F /* Assets.xcassets */,
 				7A16F87B1E96F8D900C6B69F /* LaunchScreen.storyboard */,
 				7A16F87E1E96F8D900C6B69F /* Info.plist */,
+				7A16F8791E96F8D900C6B69F /* Assets.xcassets */,
 			);
 			path = circleci;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				7A16F8751E96F8D900C6B69F /* ViewController.swift in Sources */,
 				7A16F8731E96F8D900C6B69F /* AppDelegate.swift in Sources */,
+				7A7B2CAC1EA6883B00C5EBE2 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
