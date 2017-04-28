@@ -63,9 +63,11 @@ class ViewController: UIViewController {
     }
     
     private func getToken(level: Int, completionHandler:@escaping (_ token: String?, _ error: Error?) -> Void) {
-        if let user = self.currentUser {
+        if UserDefaults.standard.object(forKey: "api_user_id") != nil && UserDefaults.standard.object(forKey: "user_imei") != nil {
+            let userId = UserDefaults.standard.object(forKey: "api_user_id")
+            let userImei = UserDefaults.standard.object(forKey: "user_imei")
             if let url = URL(string: self.baseUrl + self.generateTokenEndPoint) {
-                let params:Parameters = ["app_id": self.appId, "user_id": user.uid, "imei": user.imei, "level": level]
+                let params:Parameters = ["app_id": self.appId, "user_id": userId!, "imei": userImei!, "level": level]
                 let headers:HTTPHeaders = ["Content-type": "application/json"]
                 self.alamoManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { (response) in
                     switch response.result {
@@ -75,7 +77,7 @@ class ViewController: UIViewController {
                             completionHandler(self.token, nil)
                         }
                     case .failure(_):
-                        completionHandler(nil, response.result.error as? Error)
+                        completionHandler(nil, response.result.error)
                     }
                     
                 })
@@ -113,6 +115,7 @@ class ViewController: UIViewController {
                         if let json = response.result.value as? [String: Any] {
                             self.currentUser = User(data: json)
                             UserDefaults.standard.set(self.currentUser!.uid, forKey: "api_user_id")
+                            UserDefaults.standard.set(self.currentUser!.imei, forKey: "user_imei")
                             self.showAlert(title: "User Creation", message: "Welcome \(self.currentUser!.name)")
                         }
                     case .failure(_):
@@ -127,23 +130,30 @@ class ViewController: UIViewController {
     
     @IBAction func getUserAction(_ sender: Any) {
         if UserDefaults.standard.object(forKey: "api_user_id") != nil {
-            if let url = URL(string: self.baseUrl + self.createUserEndPoint) {
-                let headers:HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json", "Authorization": "JWT \(self.token!)"]
-                let userId = UserDefaults.standard.string(forKey: "user_id")
-                let params:Parameters = ["id": userId ?? ""]
-                self.alamoManager.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { (response) in
-                    switch response.result {
-                    case .success(_):
-                        if let json = response.result.value as? [String: Any] {
-                            NSLog("\(json)")
-                            //self.currentUser = User(data: json)
-                            //self.showAlert(title: "User Creation", message: "Welcome \(self.currentUser!.name)")
+            self.getToken(level: 1, completionHandler: { (token, error) in
+                if let _ = error {
+                    NSLog("getUserAction() | getToken() | Error: \(error!.localizedDescription)")
+                } else {
+                    if let _ = token {
+                        if let url = URL(string: self.baseUrl + self.createUserEndPoint) {
+                            let headers:HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json", "Authorization": "JWT \(token!)"]
+                            let userId = UserDefaults.standard.string(forKey: "api_user_id")
+                            let params:Parameters = ["id": userId ?? ""]
+                            self.alamoManager.request(url, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { (response) in
+                                switch response.result {
+                                case .success(_):
+                                    if let json = response.result.value as? [String: Any] {
+                                        self.currentUser = User(data: json)
+                                        self.showAlert(title: "Returning User", message: "Welcome back \(self.currentUser!.name)")
+                                    }
+                                case .failure(_):
+                                    self.showAlert(title: "Error", message: "Error creating user : \(String(describing: response.result.error?.localizedDescription))")
+                                }
+                            })
                         }
-                    case .failure(_):
-                        self.showAlert(title: "Error", message: "Error creating user : \(String(describing: response.result.error?.localizedDescription))")
                     }
-                })
-            }
+                }
+            })
         } else {
             self.showAlert(title: "Error", message: "User has never been created before.")
         }
