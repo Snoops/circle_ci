@@ -13,8 +13,19 @@
 		7A16F8781E96F8D900C6B69F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F8761E96F8D900C6B69F /* Main.storyboard */; };
 		7A16F87A1E96F8D900C6B69F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F8791E96F8D900C6B69F /* Assets.xcassets */; };
 		7A16F87D1E96F8D900C6B69F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F87B1E96F8D900C6B69F /* LaunchScreen.storyboard */; };
+		7A7824491EC36C0E00C6E177 /* circleciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7824481EC36C0E00C6E177 /* circleciTests.swift */; };
 		7A7B2CAC1EA6883B00C5EBE2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B2CAB1EA6883B00C5EBE2 /* User.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A78244B1EC36C0E00C6E177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7A16F8671E96F8D900C6B69F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A16F86E1E96F8D900C6B69F;
+			remoteInfo = circleci;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3BE65EFB1F1CBC4B07E4B895 /* Pods-circleci.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-circleci.release.xcconfig"; path = "Pods/Target Support Files/Pods-circleci/Pods-circleci.release.xcconfig"; sourceTree = "<group>"; };
@@ -26,6 +37,9 @@
 		7A16F8791E96F8D900C6B69F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A16F87C1E96F8D900C6B69F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A16F87E1E96F8D900C6B69F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A7824461EC36C0E00C6E177 /* circleciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = circleciTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7824481EC36C0E00C6E177 /* circleciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleciTests.swift; sourceTree = "<group>"; };
+		7A78244A1EC36C0E00C6E177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A7B2CAB1EA6883B00C5EBE2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_circleci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +50,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F535EF22DC02CBF76C4BA01 /* Pods_circleci.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A7824431EC36C0E00C6E177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16F8711E96F8D900C6B69F /* circleci */,
+				7A7824471EC36C0E00C6E177 /* circleciTests */,
 				7A16F8701E96F8D900C6B69F /* Products */,
 				5BD86D614C740FF3CD536529 /* Pods */,
 				0D8D4BE154446F329B76DC45 /* Frameworks */,
@@ -73,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16F86F1E96F8D900C6B69F /* circleci.app */,
+				7A7824461EC36C0E00C6E177 /* circleciTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +112,15 @@
 				7A16F8791E96F8D900C6B69F /* Assets.xcassets */,
 			);
 			path = circleci;
+			sourceTree = "<group>";
+		};
+		7A7824471EC36C0E00C6E177 /* circleciTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A7824481EC36C0E00C6E177 /* circleciTests.swift */,
+				7A78244A1EC36C0E00C6E177 /* Info.plist */,
+			);
+			path = circleciTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,6 +147,24 @@
 			productReference = 7A16F86F1E96F8D900C6B69F /* circleci.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7A7824451EC36C0E00C6E177 /* circleciTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A78244D1EC36C0E00C6E177 /* Build configuration list for PBXNativeTarget "circleciTests" */;
+			buildPhases = (
+				7A7824421EC36C0E00C6E177 /* Sources */,
+				7A7824431EC36C0E00C6E177 /* Frameworks */,
+				7A7824441EC36C0E00C6E177 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A78244C1EC36C0E00C6E177 /* PBXTargetDependency */,
+			);
+			name = circleciTests;
+			productName = circleciTests;
+			productReference = 7A7824461EC36C0E00C6E177 /* circleciTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,8 +177,14 @@
 				TargetAttributes = {
 					7A16F86E1E96F8D900C6B69F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = Y3RXWB7995;
+						DevelopmentTeam = BJYQJ8HEMB;
 						ProvisioningStyle = Automatic;
+					};
+					7A7824451EC36C0E00C6E177 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Z87U3PY7CG;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7A16F86E1E96F8D900C6B69F;
 					};
 				};
 			};
@@ -146,6 +202,7 @@
 			projectRoot = "";
 			targets = (
 				7A16F86E1E96F8D900C6B69F /* circleci */,
+				7A7824451EC36C0E00C6E177 /* circleciTests */,
 			);
 		};
 /* End PBXProject section */
@@ -158,6 +215,13 @@
 				7A16F87D1E96F8D900C6B69F /* LaunchScreen.storyboard in Resources */,
 				7A16F87A1E96F8D900C6B69F /* Assets.xcassets in Resources */,
 				7A16F8781E96F8D900C6B69F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A7824441EC36C0E00C6E177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,7 +300,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7A7824421EC36C0E00C6E177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A7824491EC36C0E00C6E177 /* circleciTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7A78244C1EC36C0E00C6E177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A16F86E1E96F8D900C6B69F /* circleci */;
+			targetProxy = 7A78244B1EC36C0E00C6E177 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7A16F8761E96F8D900C6B69F /* Main.storyboard */ = {
@@ -361,7 +441,7 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BJYQJ8HEMB;
 				INFOPLIST_FILE = circleci/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.impakfinance.circleci;
@@ -379,13 +459,41 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BJYQJ8HEMB;
 				INFOPLIST_FILE = circleci/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.impakfinance.circleci;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		7A78244E1EC36C0E00C6E177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Z87U3PY7CG;
+				INFOPLIST_FILE = circleciTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.impakfinance.circleciTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleci.app/circleci";
+			};
+			name = Debug;
+		};
+		7A78244F1EC36C0E00C6E177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Z87U3PY7CG;
+				INFOPLIST_FILE = circleciTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.impakfinance.circleciTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/circleci.app/circleci";
 			};
 			name = Release;
 		};
@@ -409,6 +517,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7A78244D1EC36C0E00C6E177 /* Build configuration list for PBXNativeTarget "circleciTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A78244E1EC36C0E00C6E177 /* Debug */,
+				7A78244F1EC36C0E00C6E177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

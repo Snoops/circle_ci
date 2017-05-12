@@ -12,7 +12,8 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    let baseUrl:String               = "https://ec2-52-60-125-84.ca-central-1.compute.amazonaws.com"
+    let oldBaseUrl:String            = "https://ec2-52-60-125-84.ca-central-1.compute.amazonaws.com"
+    let baseUrl:String               = "https://unstable-frontdoor.impak.eco"
     let helloEndPoint:String         = "/hello"
     let createUserEndPoint:String    = "/user"
     let generateTokenEndPoint:String = "/authenticate"
