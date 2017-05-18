@@ -11,5 +11,7 @@ target 'circleci' do
 
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  
+  pod 'Mockingjay'
 
 end

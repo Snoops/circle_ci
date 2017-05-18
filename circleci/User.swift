@@ -40,9 +40,9 @@ class User {
         self.uid = data[User.DatabaseFields.uidKey] as? String ?? ""
         self.name = data[User.DatabaseFields.nameKey] as? String ?? ""
         self.imei = data[User.DatabaseFields.imeiKey] as? String ?? ""
-        self.isRetail = data[User.DatabaseFields.isRetailKey] as! Bool
-        self.isEntrepreneur = data[User.DatabaseFields.isEntrepreneurKey] as! Bool
-        self.isCapitalPartner = data[User.DatabaseFields.isCapitalPartnerKey] as! Bool
+        self.isRetail = data[User.DatabaseFields.isRetailKey] as? Bool ?? false
+        self.isEntrepreneur = data[User.DatabaseFields.isEntrepreneurKey] as? Bool ?? false
+        self.isCapitalPartner = data[User.DatabaseFields.isCapitalPartnerKey] as? Bool ?? false
     }
     
 }

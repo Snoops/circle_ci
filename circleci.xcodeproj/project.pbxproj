@@ -15,6 +15,7 @@
 		7A16F87D1E96F8D900C6B69F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F87B1E96F8D900C6B69F /* LaunchScreen.storyboard */; };
 		7A7824491EC36C0E00C6E177 /* circleciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7824481EC36C0E00C6E177 /* circleciTests.swift */; };
 		7A7B2CAC1EA6883B00C5EBE2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7B2CAB1EA6883B00C5EBE2 /* User.swift */; };
+		7AF2CF721ECCDDF200639BFA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF2CF711ECCDDF200639BFA /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		7A7824481EC36C0E00C6E177 /* circleciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = circleciTests.swift; sourceTree = "<group>"; };
 		7A78244A1EC36C0E00C6E177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A7B2CAB1EA6883B00C5EBE2 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7AF2CF711ECCDDF200639BFA /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		FFFB16B3B561F693F23703E4 /* Pods_circleci.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_circleci.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +107,7 @@
 			children = (
 				7A16F8721E96F8D900C6B69F /* AppDelegate.swift */,
 				7A16F8741E96F8D900C6B69F /* ViewController.swift */,
+				7AF2CF711ECCDDF200639BFA /* NetworkManager.swift */,
 				7A7B2CAB1EA6883B00C5EBE2 /* User.swift */,
 				7A16F8761E96F8D900C6B69F /* Main.storyboard */,
 				7A16F87B1E96F8D900C6B69F /* LaunchScreen.storyboard */,
@@ -294,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AF2CF721ECCDDF200639BFA /* NetworkManager.swift in Sources */,
 				7A16F8751E96F8D900C6B69F /* ViewController.swift in Sources */,
 				7A16F8731E96F8D900C6B69F /* AppDelegate.swift in Sources */,
 				7A7B2CAC1EA6883B00C5EBE2 /* User.swift in Sources */,
@@ -525,6 +529,7 @@
 				7A78244F1EC36C0E00C6E177 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             return completionHandler(disposition, credential)
         }
     }
-
+    
     private func showAlert(title:String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Okay", style: .default, handler: nil)
@@ -94,16 +94,11 @@ class ViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func testBaseUrlAction(_ sender: Any) {
-        self.alamoManager.request(self.baseUrl + self.helloEndPoint).responseJSON { (response) in
-            switch response.result {
-            case .success(_):
-                if let json = response.result.value as? [String: Any] {
-                    let msg = json["message"] as! String
-                    self.showAlert(title: "Test Base Url", message: msg)
-                }
-            case .failure(_):
-                self.showAlert(title: "Error", message: "Error request base url : \(String(describing: response.result.error?.localizedDescription))")
-            }
+        NetworkManager.shared.testBaseUrl(onSuccess: { (result) in
+            let msg = result["message"] as! String
+            self.showAlert(title: "Test Base Url", message: msg)
+        }) { (error) in
+            self.showAlert(title: "Error", message: "Error request base url : \(String(describing: error.localizedDescription))")
         }
     }
 
@@ -111,15 +106,19 @@ class ViewController: UIViewController {
         if UserDefaults.standard.object(forKey: "api_user_id") == nil {
             if let url = URL(string: self.baseUrl + self.createUserEndPoint) {
                 let headers:HTTPHeaders = ["Content-type": "application/json", "Accept": "application/json"]
-                let params:Parameters = ["name": "John", "imei": "abcdefg"]
+                let params:Parameters = ["firstname": "John", "lastname": "Doe", "email": "john.doe@impak.com",  "imei": "abcdefg", "phone_number": "514-803-1338", "pincode": "123456", "password": "012345678910"]
                 self.alamoManager.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON(completionHandler: { (response) in
                     switch response.result {
                     case .success(_):
                         if let json = response.result.value as? [String: Any] {
-                            self.currentUser = User(data: json)
-                            UserDefaults.standard.set(self.currentUser!.uid, forKey: "api_user_id")
-                            UserDefaults.standard.set(self.currentUser!.imei, forKey: "user_imei")
-                            self.showAlert(title: "User Creation", message: "Welcome \(self.currentUser!.name)")
+                            if json["error"] != nil {
+                                self.showAlert(title: "User Creation Error", message: "\(String(describing: json["message"]!)) | \(String(describing: json["error"]!))")
+                            } else {
+                                self.currentUser = User(data: json)
+                                UserDefaults.standard.set(self.currentUser!.uid, forKey: "api_user_id")
+                                UserDefaults.standard.set(self.currentUser!.imei, forKey: "user_imei")
+                                self.showAlert(title: "User Creation", message: "Welcome \(self.currentUser!.name)")
+                            }
                         }
                     case .failure(_):
                         self.showAlert(title: "Error", message: "Error creating user : \(String(describing: response.result.error?.localizedDescription))")
